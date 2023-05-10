@@ -14,7 +14,7 @@ COPY . /consumer-alarm
 
 WORKDIR /consumer-alarm
 
-RUN pip install --no-cache-dir --upgrade -r ./app/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
 
 RUN addgroup --system ${USER} \
     && adduser --system --disabled-password --disabled-login  --gecos "" --group ${USER} \

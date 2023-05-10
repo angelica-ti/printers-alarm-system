@@ -1,7 +1,7 @@
 from fastapi import HTTPException, APIRouter, Body
 from typing import List
-from app.database import db 
-from app.schemes import FaultMsgModel, SelectedParameters
+from core.models.database import db 
+from core.schemas.schemes import FaultMsgModel, SelectedParameters
 
 
 router = APIRouter(

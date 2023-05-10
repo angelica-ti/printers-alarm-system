@@ -1,6 +1,6 @@
 from fastapi import HTTPException, status, APIRouter
 from fastapi.responses import Response
-from app.database import db 
+from core.models.database import db 
 
 router = APIRouter(
     tags=["delete-message"],

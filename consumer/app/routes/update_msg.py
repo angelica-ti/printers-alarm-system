@@ -1,6 +1,6 @@
 from fastapi import Body, HTTPException, APIRouter
-from app.schemes import FaultMsgModel, UpdateFaultMsgModel
-from app.database import db 
+from core.schemas.schemes import FaultMsgModel, UpdateFaultMsgModel
+from core.models.database import db 
 
 router = APIRouter(
     tags=["update-message"],

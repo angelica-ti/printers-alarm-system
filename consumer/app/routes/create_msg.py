@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Body, status
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
-from app.schemes import FaultMsgModel
-from app.database import db 
+from core.schemas.schemes import FaultMsgModel
+from core.models.database import db 
 
 router = APIRouter(
     tags=["create-message"],
