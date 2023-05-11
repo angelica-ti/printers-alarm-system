@@ -13,6 +13,7 @@ class FaultMsgModel(BaseModel):
     class Config:
         schema_extra = {
             "example": {
+                "_id":"id-exemplo",
                 "brand": "Epson",
                 "model": "L210",
                 "type": "laser",
