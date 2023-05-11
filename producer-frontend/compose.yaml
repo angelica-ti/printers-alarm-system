@@ -1,0 +1,10 @@
+services:
+  web:
+    build:
+      context: producer-frontend
+      target: builder
+    ports:
+      - 4200:4200
+    volumes:
+      - ./producer-frontend:/project
+      - /project/node_modules
