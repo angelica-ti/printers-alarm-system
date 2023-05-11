@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent {
   category: string = '';
   severity: number = 1;
   description: string = '';
+  showSuccess: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -29,12 +31,14 @@ export class AppComponent {
     this.http.post('http://localhost:8000/send-message', dados)
       .subscribe(
         response => {
+          this.showSuccess = true;
+          interval(3000).subscribe(() => {
+            this.showSuccess = false;
+          });
           console.log(response);
-          // Lógica adicional após o envio dos dados
         },
         error => {
           console.error(error);
-          // Lógica adicional em caso de erro
         }
       );
   }
